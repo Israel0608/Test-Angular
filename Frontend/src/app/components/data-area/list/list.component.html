@@ -1,0 +1,16 @@
+<div>
+
+    <select (change)="showEvent($event)">
+        <option selected disabled>Select Target EventsType</option>
+        <option *ngFor="let e of eventsType" [value]="e.typeId">{{e.typeName}}</option>
+    </select>
+
+    <div class="Card" *ngFor="let e of event">
+
+        <span>StartEvent: {{ e.startEvent | date: 'short'}}</span>
+        <span>Dascription: {{ e.description }}</span>
+        <span>Address: {{ e.address}}</span>
+        <span>Coming: {{ e.coming }}</span>
+
+        <button (click)="deleteEvent(e.eventId)">❌</button>
+    </div>

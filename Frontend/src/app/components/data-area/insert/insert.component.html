@@ -1,0 +1,21 @@
+<form (submit)="send()" ngNativeValidate>
+    <label>Target eventTypes: </label>
+    <select name="type" class="form-control" [(ngModel)]="event.typeId">
+        <option selected disabled>Select Target Theaer</option>
+        <option *ngFor="let e of eventsType" value="{{e.typeId}}">{{e.typeName}}</option>
+    </select>
+
+    <label>StartEvent: </label>
+    <input type="datetime-local" name="startEvent" class="form-control" [(ngModel)]="event.startEvent" required="e.startEvent">
+
+    <label>Description: </label>
+    <input type="text" name="description" class="form-control" [(ngModel)]="event.description" required="e.description">
+
+    <label>Address: </label>
+    <input type="text" name="address" class="form-control" [(ngModel)]="event.address" required="e.address">
+
+    <label>Coming: </label>
+    <input type="number" name="coming" class="form-control" [(ngModel)]="event.coming" required="e.coming">
+
+    <button class="btn btn-primary">Add</button>
+</form>
